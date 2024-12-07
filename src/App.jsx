@@ -1,35 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { TwitterFollowCard } from './TwitterFollowCard'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export function App() {
+  const formatUserName = (userName) => `@${userName}`
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+   <div className='App'>
+    <TwitterFollowCard formatUserName={formatUserName} userName="pheralb" name="Pablo Hernández"/>
+    <TwitterFollowCard formatUserName={formatUserName} userName="midudev" name="Miguel Ángel Durán"/>
+    <TwitterFollowCard formatUserName={formatUserName} userName="elonmusk" name="Elon Musk"/>
+    <TwitterFollowCard formatUserName={formatUserName} userName="vxnder" name="Vanderhart"/>
+   </div>
   )
 }
-
-export default App
